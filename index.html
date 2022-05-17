@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>메뉴 추천</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="style.css" >
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-  EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container p-3 mb-2 bg-light bg-gradient">
+            <!-- 제목 -->
+            <div class="title alert alert-success" role="alert">
+                <h1 class="text-center" id = "title">점메추 & 저메추</h1>
+            </div>
+
+            <!-- 소개말 -->
+            <div class="intro">
+                <p>
+                    메뉴 선정에 지친 당신께 맛깔난 메뉴를 추천해 드리겠습니다.
+                    <br>원하는 카테고리를 선택한 후, "오늘의 메뉴" 버튼을 눌러보세요!
+                </p>
+            </div>
+            
+            
+            <!-- 카테고리 버튼 그룹 -->
+            <div class="btn-group-vertical d-flex justify-content-center">
+                <!-- 식사 vs 후식-->
+                <div class="btn-group btn-group-lg" role="group" aria-label="Basic checkbox toggle button group - category">
+                    <input type="checkbox" class="btn-check" id="meal" autocomplete="off">
+                    <label class="btn btn-outline-success" for="meal">식사</label>
+                    <input type="checkbox" class="btn-check" id="dessert" autocomplete="off">
+                    <label class="btn btn-outline-success" for="dessert">후식</label>
+                </div>
+                
+
+                <!-- 종류 vs 냉/온-->
+                <!-- 이 버튼 그룹은 식사가 선택될 시 나타나도록 -->
+                <div class="btn-group btn-group-lg" role="group" aria-label="Basic checkbox toggle button group - meal">
+                    <input type="checkbox" class="btn-check" id="kinds" autocomplete="off">
+                    <label class="btn btn-outline-success" for="kinds">종류</label>
+                    <input type="checkbox" class="btn-check" id="coldOrhot" autocomplete="off">
+                    <label class="btn btn-outline-success" for="coldOrhot">냉/온</label>
+                </div>
+    
+                <!-- 한식 vs 일식 vs 중식 vs 아시아 vs 양식 vs 패스트푸트 -->
+                <!-- 이 버튼 그룹은 종류가 선택될 시 나타나도록 -->
+                <div class="btn-group btn-group-lg" role="group" aria-label="basic checkbox toggle button group - kinds">
+                    <input type="checkbox" class="btn-check" id="kfood" autocomplete="off">
+                    <label class="btn btn-outline-success" for="kfood">한식</label>
+                    <input type="checkbox" class="btn-check" id="jfood" autocomplete="off">
+                    <label class="btn btn-outline-success" for="jfood">일식</label>
+                    <input type="checkbox" class="btn-check" id="cfood" autocomplete="off">
+                    <label class="btn btn-outline-success" for="cfood">중식</label>
+                    <input type="checkbox" class="btn-check" id="afood" autocomplete="off">
+                    <label class="btn btn-outline-success" for="afood">아시아</label>
+                    <input type="checkbox" class="btn-check" id="wfood" autocomplete="off">
+                    <label class="btn btn-outline-success" for="wfood">양식</label>
+                    <input type="checkbox" class="btn-check" id="fastfood" autocomplete="off">
+                    <label class="btn btn-outline-success" for="fastfood">패스트푸드</label>
+                </div>
+                
+                <!-- 냉 vs 온 -->
+                <!-- 이 버튼 그룹은 냉/온이 선택될 시 나타나도록 -->
+                <div class="btn-group btn-group-lg" role="group" aria-label="Basic checkbox toggle button group - coldOrhot">
+                    <input type="checkbox" class="btn-check" id="cold" autocomplete="off">
+                    <label class="btn btn-outline-success" for="cold">냉</label>
+                    <input type="checkbox" class="btn-check" id="hot" autocomplete="off">
+                    <label class="btn btn-outline-success" for="hot">온</label>
+                </div>
+            </div>
+            <pre>
+
+
+            </pre>
+
+            <!-- 메뉴 추천 박스-->
+            <div class="menu">
+                <p>추천 메뉴는</p>
+                <div class = "menubox alert alert-success bg-body">
+                    <button type="button" class="menubtn btn btn-success btn-lg">오<br>늘<br>의<br> <br>메<br>뉴</button>
+                </div>
+                <p>입니다.</p>
+            </div>
+        </div>
+        
+        <!-- 카테고리 버튼 그룹에서 초록색으로 표시된 것들에 부합하는 메뉴 추천-->
+        <script>
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+.container{
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+p{
+    text-align: center;
+    font-size: 18px;
+}
+
+.btn-group-vertical{
+    display: block;
+    margin: auto;
+    width: 70%;
+}
+
+.menubox{
+    margin: auto;
+    height: 300px;
+    width: 70%;
+}
+
+.menubtn{
+    display: block;
+    float: right;
+    line-height: 300px;
+}
+
+.intro{
+    padding: 30px .4em;
+}
