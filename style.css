@@ -28,3 +28,7 @@ p{
 .intro{
     padding: 30px .4em;
 }
+
+label{
+    width: 1px;
+}
