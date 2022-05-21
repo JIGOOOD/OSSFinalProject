@@ -32,3 +32,4 @@
 > 5. [후식]에 해당하는 하위 카테고리
 >   + 스타벅스: MZ세대의 카페 이용률이 높고, 
 >   그들이 가장 선호하는 카페 브랜드가 스타벅스라 카테고리로 선정
+>   API reference: https://github.com/foxwavez/starbucksClone/issues/14
