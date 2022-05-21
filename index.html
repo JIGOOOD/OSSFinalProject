@@ -97,6 +97,33 @@
         
         <!-- 카테고리 버튼 그룹에서 초록색으로 표시된 것들에 부합하는 메뉴 추천-->
         <script>
+            /**
+             * starbucks에 스타벅스 메뉴들이 이미지와 함께 담겨 있음.
+             * 스타벅스는 후식의 하위 카테고리로 들어갈 예정.
+             * 스타벅스 카테고리가 선택되면 이 배열의 요소 중에서 아무거나 랜덤으로 추출하여 이미지와 함께 보여주면 됨.
+             */
+            let starbucks = [];
+            fetch("https://starbugs.herokuapp.com/api/menus")
+            .then((res) => res.json())
+            .then((json) => {
+                json.forEach(element => {
+
+                    // api로부터 name과 image 추출
+                    let name = element['name'];
+                    let image = element['image'];
+                    let list = [name, image];
+                    
+                    if(!(name.includes('콜드컵') || name.includes('글라스') || name.includes('텀블러') || name.includes('워터보틀') || name.includes('에코컵')
+                    || name.includes('머그') || name.includes('데미머그') || name.includes('에코') || name.includes('보온병') || name.includes('어뮤즈먼트')
+                    || name.includes('장우산') || name.includes('콜드컵') || name.includes('에코백') || name.includes('파우치세트') || name.includes('미니백')
+                    || name.includes('리저브') || name.includes('에코컵') || name.includes('파우치') || name.includes('에코컵') || name.includes('손수건')
+                    || name.includes('허쉘') || name.includes('바닷속') || name.includes('사이렌') || name.includes('체인') || name.includes('서머')
+                    || name.includes('트래블') || name.includes('스트로') || name.includes('케이스') || name.includes('마그넷') || name.includes('수국')
+                    || name.includes('양우산') || name.includes('체인') || name.includes('팟') || name.includes('페이퍼'))){
+                        starbucks.push(list);
+                    }
+                });
+            });
 
         </script>
     </body>
