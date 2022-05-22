@@ -38,53 +38,52 @@
             <div class="btn-group-vertical d-flex justify-content-center">
                 <!-- 식사 vs 후식-->
                 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group - category">
-                    <input type="checkbox" class="btn-check" id="meal" autocomplete="off">
-                    <label class="btn btn-outline-success" for="meal">식사</label>
-                    <input type="checkbox" class="btn-check" id="dessert" autocomplete="off">
-                    <label class="btn btn-outline-success" for="dessert">후식</label>
+                    <div class="btn-group-vertical">
+                        <input type="checkbox" class="btn-check" id="meal" autocomplete="off">
+                        <label class="btn btn-outline-success" for="meal">식사</label>
+
+                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group - meal">
+                            <div class="btn-group-vertical">
+                                <input type="checkbox" class="btn-check" id="kinds" autocomplete="off">
+                                <label class="btn btn-outline-success" for="kinds">종류</label>
+                                <div class="btn-group" role="group" aria-label="basic checkbox toggle button group - kinds">
+                                    <input type="checkbox" class="btn-check" id="kfood" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="kfood">한식</label>
+                                    <input type="checkbox" class="btn-check" id="jfood" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="jfood">일식</label>
+                                    <input type="checkbox" class="btn-check" id="cfood" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="cfood">중식</label>
+                                    <input type="checkbox" class="btn-check" id="afood" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="afood">아시아</label>
+                                    <input type="checkbox" class="btn-check" id="wfood" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="wfood">양식</label>
+                                    <input type="checkbox" class="btn-check" id="fastfood" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="fastfood">패스트푸드</label>
+                                </div>
+                            </div>
+                            <div class="btn-group-vertical coldOrhot">
+                                <input type="checkbox" class="btn-check" id="coldOrhot" autocomplete="off">
+                                <label class="btn btn-outline-success" for="coldOrhot">냉/온</label>
+                                <div style="height: 135px" class ="btn-group" role="group" aria-label="Basic checkbox toggle button group - coldOrhot">
+                                    <input type="checkbox" class="btn-check" id="cold" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="cold">냉</label>
+                                    <input type="checkbox" class="btn-check" id="hot" autocomplete="off">
+                                    <label class="btn btn-outline-success" for="hot">온</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group-vertical dessert">
+                        <input type="checkbox" class="btn-check" id="dessert" autocomplete="off">
+                        <label class="btn btn-outline-success" for="dessert">후식</label>
+                        <input type="checkbox" class="btn-check" id="starbucks" autocomplete="off">
+                        <label style="height: 170px;" class="btn btn-outline-success" for="starbucks">스타벅스</label>
+                    </div>
+                    
                 </div>
                 
-
-                <!-- 종류 vs 냉/온-->
-                <!-- 이 버튼 그룹은 식사가 선택될 시 나타나도록 -->
-                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group - meal">
-                    <input type="checkbox" class="btn-check" id="kinds" autocomplete="off">
-                    <label class="btn btn-outline-success" for="kinds">종류</label>
-                    <input type="checkbox" class="btn-check" id="coldOrhot" autocomplete="off">
-                    <label class="btn btn-outline-success" for="coldOrhot">냉/온</label>
-                </div>
-    
-                <!-- 한식 vs 일식 vs 중식 vs 아시아 vs 양식 vs 패스트푸트 -->
-                <!-- 이 버튼 그룹은 종류가 선택될 시 나타나도록 -->
-                <div class="btn-group" role="group" aria-label="basic checkbox toggle button group - kinds">
-                    <input type="checkbox" class="btn-check" id="kfood" autocomplete="off">
-                    <label class="btn btn-outline-success" for="kfood">한식</label>
-                    <input type="checkbox" class="btn-check" id="jfood" autocomplete="off">
-                    <label class="btn btn-outline-success" for="jfood">일식</label>
-                    <input type="checkbox" class="btn-check" id="cfood" autocomplete="off">
-                    <label class="btn btn-outline-success" for="cfood">중식</label>
-                    <input type="checkbox" class="btn-check" id="afood" autocomplete="off">
-                    <label class="btn btn-outline-success" for="afood">아시아</label>
-                    <input type="checkbox" class="btn-check" id="wfood" autocomplete="off">
-                    <label class="btn btn-outline-success" for="wfood">양식</label>
-                    <input type="checkbox" class="btn-check" id="fastfood" autocomplete="off">
-                    <label class="btn btn-outline-success" for="fastfood">패스트푸드</label>
-                </div>
-                
-                <!-- 냉 vs 온 -->
-                <!-- 이 버튼 그룹은 냉/온이 선택될 시 나타나도록 -->
-                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group - coldOrhot">
-                    <input type="checkbox" class="btn-check" id="cold" autocomplete="off">
-                    <label class="btn btn-outline-success" for="cold">냉</label>
-                    <input type="checkbox" class="btn-check" id="hot" autocomplete="off">
-                    <label class="btn btn-outline-success" for="hot">온</label>
-                </div>
-
-                <!-- 스타벅스 -->
-                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group - starbucks">
-                    <input type="checkbox" class="btn-check" id="starbucks" autocomplete="off">
-                    <label class="btn btn-outline-success" for="starbucks">스타벅스</label>
-                </div>
             </div>
             <pre>
 
