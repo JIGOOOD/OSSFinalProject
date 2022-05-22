@@ -79,6 +79,12 @@
                     <input type="checkbox" class="btn-check" id="hot" autocomplete="off">
                     <label class="btn btn-outline-success" for="hot">온</label>
                 </div>
+
+                <!-- 스타벅스 -->
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group - starbucks">
+                    <input type="checkbox" class="btn-check" id="starbucks" autocomplete="off">
+                    <label class="btn btn-outline-success" for="starbucks">스타벅스</label>
+                </div>
             </div>
             <pre>
 
@@ -123,8 +129,15 @@
                         starbucks.push(list);
                     }
                 });
+
+                // 스타벅스 버튼 입력 시 반응
+                let starBtn = document.querySelector("#starbucks");
+                const star_random = Math.floor(Math.random()*(starbucks.length));
+
+                
             });
 
+            
         </script>
     </body>
 </html>
