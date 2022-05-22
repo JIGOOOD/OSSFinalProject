@@ -62,3 +62,8 @@ label{
 #parentdiv.meal.hotcold .hotcold-sub {
     display: inline-flex;
 }
+
+.hidden{
+    color: gray;
+    font-size: small;
+}

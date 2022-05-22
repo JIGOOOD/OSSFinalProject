@@ -97,6 +97,14 @@
                 </div>
                 <p>입니다.</p>
             </div>
+
+            <pre>
+
+                
+            </pre>
+            <p class="hidden">
+                F12->console로 들어오시면 숨겨진 기능을 체험하실 수 있습니다. (feat.스타벅스 메뉴추천)
+            </p>
         </div>
 
         <!-- 카테고리 버튼 그룹에서 초록색으로 표시된 것들에 부합하는 메뉴 추천-->
@@ -181,7 +189,7 @@
                     candidate = Object.keys(foods);
                 }
                 let todayMenu = candidate[Math.floor(Math.random() * candidate.length)];
-                todaymenu.querySelector("img").src = `Image/${todayMenu}.jpg`;
+                todaymenu.querySelector("img").src = `image/${todayMenu}.jpg`;
                 todaymenu.querySelector("span").innerHTML = todayMenu;
             }
             var foods = {
@@ -627,6 +635,40 @@
                 }
 
             }
+
+            let starbucks = [];
+
+            fetch("https://starbugs.herokuapp.com/api/menus")
+            .then((res) => res.json())
+            .then((json) => {
+                json.forEach(element => {
+
+                    // api로부터 name과 image 추출
+                    let name = element['name'];
+                    let image = element['image'];
+                    let list = [name, image];
+                    
+                    if(!(name.includes('콜드컵') || name.includes('글라스') || name.includes('텀블러') || name.includes('워터보틀') || name.includes('에코컵')
+                    || name.includes('머그') || name.includes('데미머그') || name.includes('에코') || name.includes('보온병') || name.includes('어뮤즈먼트')
+                    || name.includes('장우산') || name.includes('콜드컵') || name.includes('에코백') || name.includes('파우치세트') || name.includes('미니백')
+                    || name.includes('리저브') || name.includes('에코컵') || name.includes('파우치') || name.includes('에코컵') || name.includes('손수건')
+                    || name.includes('허쉘') || name.includes('바닷속') || name.includes('사이렌') || name.includes('체인') || name.includes('서머')
+                    || name.includes('트래블') || name.includes('스트로') || name.includes('케이스') || name.includes('마그넷') || name.includes('수국')
+                    || name.includes('양우산') || name.includes('체인') || name.includes('팟') || name.includes('페이퍼'))){
+                        starbucks.push(list);
+                    }
+                });
+
+                const star_random = Math.floor(Math.random() * starbucks.length);
+                console.log("히든 스페이스에 오신것을 환영합니다!");
+                console.log("이 곳에서는 스타벅스 메뉴를 추천해드리고 있습니다.");
+                console.log("새로고침을 하시면 추천메뉴가 바뀌니 참고해주세요~");
+                console.log("");
+                console.log("추천드리는 스타벅스 메뉴는");
+                console.log("\"" + starbucks[star_random][0] + "\"");
+                console.log(starbucks[star_random][1]);
+                console.log("입니다!");
+            });
         </script>
     </body>
 </html>
