@@ -32,58 +32,53 @@
                     <br>원하는 카테고리를 선택한 후, "오늘의 메뉴" 버튼을 눌러보세요!
                 </p>
             </div>
-            
-            
+
+
             <!-- 카테고리 버튼 그룹 -->
-            <div class="btn-group-vertical d-flex justify-content-center">
+            <div id="parentdiv" class="btn-group-vertical d-flex justify-content-center">
                 <!-- 식사 vs 후식-->
                 <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group - category">
-                    <div class="btn-group-vertical">
-                        <input type="checkbox" class="btn-check" id="meal" autocomplete="off">
-                        <label class="btn btn-outline-success" for="meal">식사</label>
-
-                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group - meal">
-                            <div class="btn-group-vertical">
-                                <input type="checkbox" class="btn-check" id="kinds" autocomplete="off">
-                                <label class="btn btn-outline-success" for="kinds">종류</label>
-                                <div class="btn-group" role="group" aria-label="basic checkbox toggle button group - kinds">
-                                    <input type="checkbox" class="btn-check" id="kfood" autocomplete="off">
-                                    <label class="btn btn-outline-success" for="kfood">한식</label>
-                                    <input type="checkbox" class="btn-check" id="jfood" autocomplete="off">
-                                    <label class="btn btn-outline-success" for="jfood">일식</label>
-                                    <input type="checkbox" class="btn-check" id="cfood" autocomplete="off">
-                                    <label class="btn btn-outline-success" for="cfood">중식</label>
-                                    <input type="checkbox" class="btn-check" id="afood" autocomplete="off">
-                                    <label class="btn btn-outline-success" for="afood">아시아</label>
-                                    <input type="checkbox" class="btn-check" id="wfood" autocomplete="off">
-                                    <label class="btn btn-outline-success" for="wfood">양식</label>
-                                    <input type="checkbox" class="btn-check" id="fastfood" autocomplete="off">
-                                    <label class="btn btn-outline-success" for="fastfood">패스트푸드</label>
-                                </div>
-                            </div>
-                            <div class="btn-group-vertical coldOrhot">
-                                <input type="checkbox" class="btn-check" id="coldOrhot" autocomplete="off">
-                                <label class="btn btn-outline-success" for="coldOrhot">냉/온</label>
-                                <div style="height: 135px" class ="btn-group" role="group" aria-label="Basic checkbox toggle button group - coldOrhot">
-                                    <input type="checkbox" class="btn-check" id="cold" autocomplete="off">
-                                    <label class="btn btn-outline-success" for="cold">냉</label>
-                                    <input type="checkbox" class="btn-check" id="hot" autocomplete="off">
-                                    <label class="btn btn-outline-success" for="hot">온</label>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    
-                    <div class="btn-group-vertical dessert">
-                        <input type="checkbox" class="btn-check" id="dessert" autocomplete="off">
-                        <label class="btn btn-outline-success" for="dessert">후식</label>
-                        <input type="checkbox" class="btn-check" id="starbucks" autocomplete="off">
-                        <label style="height: 170px;" class="btn btn-outline-success" for="starbucks">스타벅스</label>
-                    </div>
-                    
+                    <input type="checkbox" class="btn-check" onclick="choiceType(this)" id="meal" autocomplete="off">
+                    <label class="btn btn-outline-success" for="meal">식사</label>
+                    <input type="checkbox" class="btn-check" onclick="choiceType(this)" id="dessert" autocomplete="off">
+                    <label class="btn btn-outline-success" for="dessert">후식</label>
                 </div>
-                
+
+
+                <!-- 종류 vs 냉/온-->
+                <!-- 이 버튼 그룹은 식사가 선택될 시 나타나도록 -->
+                <div id="mealsubcategory" class="btn-group meal-sub" role="group" aria-label="Basic checkbox toggle button group - meal">
+                    <input type="checkbox" class="btn-check" onclick="choiceMealSubcategory(this)" id="kinds" autocomplete="off">
+                    <label class="btn btn-outline-success" for="kinds">종류</label>
+                    <input type="checkbox" class="btn-check" onclick="choiceMealSubcategory(this)" id="coldOrhot" autocomplete="off">
+                    <label class="btn btn-outline-success" for="coldOrhot">냉/온</label>
+                </div>
+
+                <!-- 한식 vs 일식 vs 중식 vs 아시아 vs 양식 vs 패스트푸트 -->
+                <!-- 이 버튼 그룹은 종류가 선택될 시 나타나도록 -->
+                <div id="kindsubcategory" class="btn-group kind-sub" role="group" aria-label="basic checkbox toggle button group - kinds">
+                    <input type="checkbox" class="btn-check" onclick="choiceKind(this)" id="kfood" data-kind="한식" autocomplete="off">
+                    <label class="btn btn-outline-success" for="kfood">한식</label>
+                    <input type="checkbox" class="btn-check" onclick="choiceKind(this)" id="jfood" data-kind="일식" autocomplete="off">
+                    <label class="btn btn-outline-success" for="jfood">일식</label>
+                    <input type="checkbox" class="btn-check" onclick="choiceKind(this)" id="cfood" data-kind="중식" autocomplete="off">
+                    <label class="btn btn-outline-success" for="cfood">중식</label>
+                    <input type="checkbox" class="btn-check" onclick="choiceKind(this)" id="afood" data-kind="아시아" autocomplete="off">
+                    <label class="btn btn-outline-success" for="afood">아시아</label>
+                    <input type="checkbox" class="btn-check" onclick="choiceKind(this)" id="wfood" data-kind="양식" autocomplete="off">
+                    <label class="btn btn-outline-success" for="wfood">양식</label>
+                    <input type="checkbox" class="btn-check" onclick="choiceKind(this)" id="fastfood" data-kind="패스트푸드" autocomplete="off">
+                    <label class="btn btn-outline-success" for="fastfood">패스트푸드</label>
+                </div>
+
+                <!-- 냉 vs 온 -->
+                <!-- 이 버튼 그룹은 냉/온이 선택될 시 나타나도록 -->
+                <div id="hotcoldsubcategory" class="btn-group hotcold-sub" role="group" aria-label="Basic checkbox toggle button group - coldOrhot">
+                    <input type="checkbox" class="btn-check" onclick="choiceHotColdSubcategory(this)" id="cold" autocomplete="off">
+                    <label class="btn btn-outline-success" for="cold">냉</label>
+                    <input type="checkbox" class="btn-check" onclick="choiceHotColdSubcategory(this)" id="hot" autocomplete="off">
+                    <label class="btn btn-outline-success" for="hot">온</label>
+                </div>
             </div>
             <pre>
 
@@ -94,15 +89,547 @@
             <div class="menu">
                 <p>추천 메뉴는</p>
                 <div class = "menubox alert alert-success bg-body">
-                    <button type="button" class="menubtn btn btn-success btn-lg">오<br>늘<br>의<br> <br>메<br>뉴</button>
+                    <div id="todaymenu">
+                        <span></span>
+                        <img>
+                    </div>
+                    <button type="button" onclick="getMenu()" class="menubtn btn btn-success btn-lg">오<br>늘<br>의<br> <br>메<br>뉴</button>
                 </div>
                 <p>입니다.</p>
             </div>
         </div>
-        
+
         <!-- 카테고리 버튼 그룹에서 초록색으로 표시된 것들에 부합하는 메뉴 추천-->
         <script>
-            
+            function choiceType(elem) {
+                if (elem.id =="meal") {
+                    dessert.checked = false;
+                    parentdiv.classList.add("meal");
+                    parentdiv.classList.remove("dessert");
+                } else {
+                    meal.checked = false;
+                    parentdiv.classList.add("dessert");
+                    parentdiv.classList.remove("meal");
+                }
+                elem.checked = true;
+            }
+            function choiceMealSubcategory(elem) {
+                if (elem.id =="kinds") {
+                    coldOrhot.checked = false;
+                    parentdiv.classList.add("kind");
+                    parentdiv.classList.remove("hotcold");
+                } else {
+                    kinds.checked = false;
+                    parentdiv.classList.add("hotcold");
+                    parentdiv.classList.remove("kind");
+                }
+                elem.checked = true;
+            }
+            function choiceHotColdSubcategory(elem) {
+                if (elem.id =="cold") {
+                    hot.checked = false;
+                } else {
+                    cold.checked = false;
+                }
+                elem.checked = true;
+            }
+            function choiceKind(el) {
+                var ischecked = el.checked == true;
+                kindsubcategory.querySelectorAll("input").forEach((elem) => {
+                    elem.checked = false;
+                });
+                if (ischecked) {
+                    el.checked = true;
+                }
+            }
+            function getMenu() {
+                let candidate = [];
+                if(meal.checked) {
+                    if (kinds.checked) {
+                        let kind = kindsubcategory.querySelector("input:checked");
+                        if (!kind) {
+                            candidate = Object.keys(foods).filter((key) => {
+                                return foods[key]["category"] == "식사";
+                            });
+                        } else {
+                            candidate = Object.keys(foods).filter((key) => {
+                                return foods[key]["foodtype"] == kind.dataset.kind;
+                            });
+                        }
+                    } else if (coldOrhot.checked) {
+                        if (cold.checked) {
+                            candidate = Object.keys(foods).filter((key) => {
+                                return foods[key]["hotcold"] == "냉";
+                            });
+                        } else if (hot.checked) {
+                            candidate = Object.keys(foods).filter((key) => {
+                                return foods[key]["hotcold"] == "온";
+                            });
+                        } else {
+                            candidate = Object.keys(foods).filter((key) => {
+                                return foods[key]["category"] == "식사";
+                            });
+                        }
+                    } else {
+                        candidate = Object.keys(foods);
+                    }
+                } else if (dessert.checked) {
+                    candidate = Object.keys(foods).filter((key) => {
+                        return foods[key]["category"] == "후식";
+                    });
+                } else {
+                    candidate = Object.keys(foods);
+                }
+                let todayMenu = candidate[Math.floor(Math.random() * candidate.length)];
+                todaymenu.querySelector("img").src = `image/${todayMenu}.jpg`;
+                todaymenu.querySelector("span").innerHTML = todayMenu;
+            }
+            var foods = {
+                "샤브샤브":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"온"
+                },
+                "김치말이국수":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"null"
+                },
+                "콩국수":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"냉"
+                },
+                "된장찌개":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"온"
+                },
+                "연포탕":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"온"
+                },
+                "부대찌개":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"온"
+                },
+                "알탕":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"온"
+                },
+                "순대국밥":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"온"
+                },
+                "뼈다귀해장국":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"온"
+                },
+                "냉면":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"냉"
+                },
+                "뚝배기불고기":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"온"
+                },
+                "쫄면":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"냉"
+                },
+                "잔치국수":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"온"
+                },
+                "비빔막국수":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"냉"
+                },
+                "떡볶이":{
+                category:"식사",
+                foodtype:"한식",
+                hotcold:"온"
+                },
+                "마라탕":{
+                category:"식사",
+                foodtype:"중식",
+                hotcold:"온"
+                },
+                "중화냉면":{
+                category:"식사",
+                foodtype:"중식",
+                hotcold:"냉"
+                },
+                "우육탕면":{
+                category:"식사",
+                foodtype:"중식",
+                hotcold:"온"
+                },
+                "중화우동":{
+                category:"식사",
+                foodtype:"중식",
+                hotcold:"온"
+                },
+                "기스면":{
+                category:"식사",
+                foodtype:"중식",
+                hotcold:"온"
+                },
+                "잡채덮밥":{
+                category:"식사",
+                foodtype:"중식",
+                hotcold:"온"
+                },
+                "울면":{
+                category:"식사",
+                foodtype:"중식",
+                hotcold:"온"
+                },
+                "훠궈":{
+                category:"식사",
+                foodtype:"중식",
+                hotcold:"온"
+                },
+                "짜장면":{
+                category:"식사",
+                foodtype:"중식",
+                hotcold:"온"
+                },
+                "짬뽕":{
+                category:"식사",
+                foodtype:"중식",
+                hotcold:"온"
+                },
+                "냉우동":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"냉"
+                },
+                "탄탄멘":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"온"
+                },
+                "스키야끼":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"온"
+                },
+                "텐동":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"온"
+                },
+                "부타동":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"온"
+                },
+                "사케동":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"null"
+                },
+                "소유라멘":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"온"
+                },
+                "가츠동":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"온"
+                },
+                "스시":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"null"
+                },
+                "카레":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"온"
+                },
+                "야끼소바":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"온"
+                },
+                "메밀소바":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"냉"
+                },
+                "세이로무시":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"온"
+                },
+                "돈코츠라멘":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"온"
+                },
+                "시오라멘":{
+                category:"식사",
+                foodtype:"일식",
+                hotcold:"온"
+                },
+                "스테이크":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"온"
+                },
+                "베이글샌드위치":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"null"
+                },
+                "타코":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"null"
+                },
+                "봉골레파스타":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"온"
+                },
+                "팬케이크":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"null"
+                },
+                "파니니":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"null"
+                },
+                "그라탕":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"온"
+                },
+                "라자냐":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"온"
+                },
+                "연어스테이크":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"온"
+                },
+                "마르게리따피자":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"온"
+                },
+                "리코타샐러드":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"null"
+                },
+                "로제파스타":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"온"
+                },
+                "크림파스타":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"온"
+                },
+                "오일파스타":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"온"
+                },
+                "고르곤졸라피자":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"온"
+                },
+                "리조또":{
+                category:"식사",
+                foodtype:"양식",
+                hotcold:"온"
+                },
+                "파인애플볶음밥":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"온"
+                },
+                "그린커리":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"온"
+                },
+                "나시고랭":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"null"
+                },
+                "팟타이":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"온"
+                },
+                "얌운센":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"냉"
+                },
+                "월남쌈":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"null"
+                },
+                "인도커리":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"온"
+                },
+                "반미":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"null"
+                },
+                "뿌팟퐁커리":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"온"
+                },
+                "똠양꿍":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"온"
+                },
+                "분짜":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"null"
+                },
+                "쌀국수":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"온"
+                },
+                "미고랭":{
+                category:"식사",
+                foodtype:"아시아",
+                hotcold:"온"
+                },
+                "햄버거":{
+                category:"식사",
+                foodtype:"패스트푸드",
+                hotcold:"null"
+                },
+                "피자":{
+                category:"식사",
+                foodtype:"패스트푸드",
+                hotcold:"null"
+                },
+                "케밥":{
+                category:"식사",
+                foodtype:"패스트푸드",
+                hotcold:"null"
+                },
+                "치킨":{
+                category:"식사",
+                foodtype:"패스트푸드",
+                hotcold:"null"
+                },
+                "핫도그":{
+                category:"식사",
+                foodtype:"패스트푸드",
+                hotcold:"null"
+                },
+                "샌드위치":{
+                category:"식사",
+                foodtype:"패스트푸드",
+                hotcold:"null"
+                },
+                "라면":{
+                category:"식사",
+                foodtype:"패스트푸드",
+                hotcold:"null"
+                },
+                "커피":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                },
+                "과일":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                },
+                "녹차":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                },
+                "아이스크림":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                },
+                "과자":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                },
+                "탄산음료":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                },
+                "유제품":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                },
+                "과일주스":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                },
+                "초콜릿":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                },
+                "케이크":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                },
+                "마카롱":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                },
+                "빵":{
+                category:"후식",
+                foodtype:"후식",
+                hotcold:"null"
+                }
+
+            }
+
+
+
         </script>
     </body>
 </html>
