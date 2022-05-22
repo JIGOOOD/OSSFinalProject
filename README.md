@@ -40,4 +40,5 @@
 ### 스타벅스 API reference
 > https://github.com/foxwavez/starbucksClone/issues/14
 
-### 참여자 
+### 참여자 행동 강령
+> 
