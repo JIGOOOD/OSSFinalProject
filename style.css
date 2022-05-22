@@ -33,32 +33,3 @@ p{
 label{
     width: 1px;
 }
-
-#todaymenu {
-    display: flex;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    flex-direction: row;
-    align-items: center;
-}
-#todaymenu img {
-    width: 200px;
-    margin-left: 12px;;
-}
-#todaymenu span {
-    font-size: 24px;
-}
-
-#parentdiv .meal-sub,
-#parentdiv .kind-sub,
-#parentdiv .hotcold-sub {
-    display: none;
-}
-
-#parentdiv.meal .meal-sub,
-#parentdiv.meal.kind .kind-sub,
-#parentdiv.meal.hotcold .hotcold-sub {
-    display: inline-flex;
-}
